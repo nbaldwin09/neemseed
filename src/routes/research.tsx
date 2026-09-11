@@ -18,6 +18,12 @@ function ResearchPage() {
         <p className="mt-8 text-muted">
           NeemSeed is giving her heart and soul to make research and food readily accessible.
         </p>
+        <p className="mt-5 text-muted">
+          For questions contact{" "}
+          <a href="mailto:cs@neemseed.com" className="text-fg underline-offset-4 hover:underline">
+            cs@neemseed.com
+          </a>
+        </p>
       </section>
     </SimplePage>
   );
