@@ -10,7 +10,6 @@ const NAV: Record<
   {
     home: string;
     name: string;
-    cta?: { to: string; label: string };
     links: Array<{ to: string; label: string }>;
   }
 > = {
@@ -38,9 +37,6 @@ const NAV: Record<
     links: [
       { to: "/about", label: "About" },
       { to: "/research", label: "Research" },
-      { to: "/lab", label: "Lab" },
-      { to: "/involved", label: "Partners" },
-      { to: "/investors", label: "Investors" },
       { to: "/contact", label: "Contact" },
     ],
   },
@@ -66,18 +62,18 @@ export function BrandShell({
   const [open, setOpen] = useState(false);
   return (
     <div data-brand={brand} className="min-h-dvh bg-bg text-fg">
-      <header className="sticky top-0 z-40 border-b border-line bg-bg/95 backdrop-blur-sm">
-        <div className="mx-auto flex max-w-6xl items-center gap-4 px-5 py-4">
+      <header className="sticky top-0 z-40 bg-bg/90 backdrop-blur-sm">
+        <div className="mx-auto flex max-w-5xl items-center gap-4 px-6 py-5">
           <Link to={nav.home} className="shrink-0" onClick={() => setOpen(false)}>
             <Mark brand={brand} />
             <span className="sr-only">{nav.name}</span>
           </Link>
-          <nav className="ml-auto hidden items-center gap-1 md:flex">
+          <nav className="ml-auto hidden items-center gap-8 md:flex">
             {nav.links.map((l) => (
               <Link
                 key={l.to + l.label}
                 to={l.to}
-                className="inline-flex h-10 items-center px-3 text-sm text-muted hover:text-fg"
+                className="text-sm text-muted hover:text-fg"
               >
                 {l.label}
               </Link>
@@ -85,20 +81,20 @@ export function BrandShell({
           </nav>
           <button
             type="button"
-            className="ml-auto inline-flex h-11 w-11 items-center justify-center rounded-sm text-fg md:hidden"
+            className="ml-auto inline-flex h-10 w-10 items-center justify-center text-fg md:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
           >
-            {open ? <X size={22} /> : <Menu size={22} />}
+            {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
         {open ? (
-          <nav className="flex flex-col gap-1 border-t border-line px-5 py-3 md:hidden">
+          <nav className="flex flex-col gap-1 px-6 pb-6 md:hidden">
             {nav.links.map((l) => (
               <Link
                 key={l.to + l.label}
                 to={l.to}
-                className="inline-flex h-11 items-center text-sm"
+                className="inline-flex h-10 items-center text-sm"
                 onClick={() => setOpen(false)}
               >
                 {l.label}
@@ -109,11 +105,8 @@ export function BrandShell({
         {brand === "bullpen" ? <DeskSearch /> : null}
       </header>
       {children}
-      <footer className="border-t border-line">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-10 text-sm text-faint sm:flex-row sm:items-center sm:justify-between">
-          <p>NeemSeed</p>
-          <p>An Aorila company · Botany research & seed vault</p>
-        </div>
+      <footer className="mt-auto">
+        <div className="mx-auto max-w-5xl px-6 py-12 text-sm text-faint">NeemSeed</div>
       </footer>
     </div>
   );
@@ -139,18 +132,15 @@ function DeskSearch() {
     void navigate({ to: "/search", search: { q: next } });
   };
   return (
-    <form onSubmit={onSubmit} className="mx-auto flex max-w-6xl gap-2 px-5 pb-4">
+    <form onSubmit={onSubmit} className="mx-auto flex max-w-5xl gap-2 px-6 pb-4">
       <input
         value={q}
         onChange={(e) => setQ(e.target.value)}
-        placeholder="Search sports, leagues, clubs"
-        aria-label="Search the index"
+        placeholder="Search"
+        aria-label="Search"
         className="h-10 min-h-10 w-full rounded-sm bg-surface px-3 text-sm text-fg shadow-[0_0_0_1px_var(--color-line)] outline-none placeholder:text-faint"
       />
-      <button
-        type="submit"
-        className="inline-flex h-10 shrink-0 items-center rounded-sm bg-fg px-4 text-sm font-medium text-bg"
-      >
+      <button type="submit" className="inline-flex h-10 shrink-0 items-center px-4 text-sm">
         Search
       </button>
     </form>
