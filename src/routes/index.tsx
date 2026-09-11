@@ -29,10 +29,7 @@ function NeemHome() {
             </div>
           </div>
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted">
-              Botany research & seed vault
-            </p>
-            <h1 className="mt-5 font-display text-5xl leading-[1.02] tracking-tight sm:text-6xl">
+            <h1 className="font-display text-5xl leading-[1.02] tracking-tight sm:text-6xl">
               Seed science
               <br />
               for hard climates.
@@ -95,12 +92,6 @@ function NeemHome() {
             cs@neemseed.com
           </a>
         </p>
-        <Link
-          to="/contact"
-          className="mt-8 inline-flex h-12 items-center bg-accent px-6 text-sm font-medium uppercase tracking-wide text-accent-fg"
-        >
-          Contact
-        </Link>
       </section>
     </main>
   );
