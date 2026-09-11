@@ -1,35 +1,54 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SimplePage } from "@/components/simple-page";
-import { PAPERS, PROGRAMS } from "@/lib/neem/content";
 
 export const Route = createFileRoute("/research")({ component: ResearchPage });
+
+const CLUSTERS = [
+  {
+    title: "Genebank",
+    copy: "Collect, conserve, and hold seed accessions with origin and passport data. Live rows and a cold copy so material is not kept in one place.",
+  },
+  {
+    title: "Characterization",
+    copy: "Describe each accession: germination, coat and seed structure, flowering, and basic agronomic traits. Unnamed seed does not enter a trial.",
+  },
+  {
+    title: "Climate and stress",
+    copy: "Evaluate lines under heat, drought, salinity, and short or erratic rain. Stress performance is recorded before any yield story.",
+  },
+  {
+    title: "Trait discovery",
+    copy: "Identify useful traits from landraces and working collections — resilience, quality, and field habit — for use in further selection.",
+  },
+  {
+    title: "Breeding lines",
+    copy: "Move selected material through lab, glasshouse, and field screens toward lines that can stand in a commercial planting.",
+  },
+  {
+    title: "Seed systems",
+    copy: "Keep a path from accession to farm: regeneration, storage, and the records a grower or partner needs to plant a stand.",
+  },
+];
 
 function ResearchPage() {
   return (
     <SimplePage
       kicker="Research"
-      title="The seed science behind self-sufficient farming."
-      lead="Six programs. One house. Notes, accessions, and a pipeline that still has dirt on it."
+      title="Crop improvement and germplasm."
+      lead="We collect, conserve, characterize, and evaluate seed varieties, then select lines for farms without a stable growing season."
     >
-      <div className="grid gap-10 sm:grid-cols-2">
-        {PROGRAMS.map((p) => (
-          <article key={p.id}>
-            <h2 className="font-display text-3xl">{p.title}</h2>
-            <p className="mt-3 text-muted">{p.copy}</p>
+      <p className="max-w-2xl text-muted">
+        The work follows the same sequence used by public genebanks and dryland breeding programs:
+        acquire material, keep it viable, describe it, test it under stress, and only then advance a line.
+      </p>
+      <div className="mt-14 grid gap-10 sm:grid-cols-2">
+        {CLUSTERS.map((c) => (
+          <article key={c.title}>
+            <h2 className="font-display text-3xl">{c.title}</h2>
+            <p className="mt-3 text-muted">{c.copy}</p>
           </article>
         ))}
       </div>
-      <h2 className="mt-20 font-display text-3xl">Notes</h2>
-      <ul className="mt-6 divide-y divide-line border-y border-line">
-        {PAPERS.map((p) => (
-          <li key={p.title} className="flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:justify-between">
-            <span>{p.title}</span>
-            <span className="text-sm text-muted">
-              {p.year} · {p.venue}
-            </span>
-          </li>
-        ))}
-      </ul>
     </SimplePage>
   );
 }
