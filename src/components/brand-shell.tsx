@@ -5,7 +5,6 @@ import { NeemMark } from "@/components/wordmarks";
 const LINKS = [
   { to: "/about", label: "About us" },
   { to: "/research", label: "Research" },
-  { to: "/careers", label: "Careers" },
   { to: "/contact", label: "Contact" },
 ];
 
