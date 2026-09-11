@@ -106,10 +106,7 @@ export function BrandShell({
       {children}
       <footer className="border-t border-line">
         <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <p className="font-display text-xl">neemseed.</p>
-            <p className="mt-2 text-sm text-muted">Botany research & seed vault</p>
-          </div>
+          <p className="font-display text-xl">neemseed.</p>
           <div className="flex flex-col gap-2 text-sm">
             <Link to="/research" className="text-muted hover:text-fg">
               Research
