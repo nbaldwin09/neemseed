@@ -5,9 +5,12 @@ export const Route = createFileRoute("/contact")({ component: ContactPage });
 
 function ContactPage() {
   return (
-    <SimplePage kicker="Contact" title="Get in touch.">
-      <p className="max-w-md text-muted">
-        Research partners, growers, and the house. Start with the crop and the place.
+    <SimplePage kicker="Contact" title="Contact">
+      <p className="max-w-xl text-muted">
+        For inquiries contact{" "}
+        <a href="mailto:cs@neemseed.com" className="text-fg underline-offset-4 hover:underline">
+          cs@neemseed.com
+        </a>
       </p>
     </SimplePage>
   );
