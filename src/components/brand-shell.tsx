@@ -111,6 +111,9 @@ export function BrandShell({
             <Link to="/research" className="text-muted hover:text-fg">
               Research
             </Link>
+            <Link to="/careers" className="text-muted hover:text-fg">
+              Careers
+            </Link>
             <Link to="/contact" className="text-muted hover:text-fg">
               Contact
             </Link>
