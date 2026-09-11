@@ -38,11 +38,11 @@ const NAV: Record<
     links: [
       { to: "/about", label: "About" },
       { to: "/research", label: "Research" },
+      { to: "/pipeline", label: "Pipeline" },
       { to: "/involved", label: "Get Involved" },
       { to: "/investors", label: "Investors" },
       { to: "/contact", label: "Contact" },
     ],
-    cta: { to: "/shop", label: "Shop Seeds" },
   },
   calabi: {
     home: "/",
@@ -75,7 +75,7 @@ export function BrandShell({
           <nav className="ml-auto hidden items-center gap-1 md:flex">
             {nav.links.map((l) => (
               <Link
-                key={l.to}
+                key={l.to + l.label}
                 to={l.to}
                 className="inline-flex h-10 items-center px-3 text-sm text-muted hover:text-fg"
               >
@@ -112,7 +112,7 @@ export function BrandShell({
           <nav className="flex flex-col gap-1 border-t border-line px-5 py-3 md:hidden">
             {nav.links.map((l) => (
               <Link
-                key={l.to}
+                key={l.to + l.label}
                 to={l.to}
                 className="inline-flex h-11 items-center text-sm"
                 onClick={() => setOpen(false)}
