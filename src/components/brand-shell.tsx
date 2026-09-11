@@ -38,8 +38,8 @@ const NAV: Record<
     links: [
       { to: "/about", label: "About" },
       { to: "/research", label: "Research" },
-      { to: "/pipeline", label: "Pipeline" },
-      { to: "/involved", label: "Get Involved" },
+      { to: "/lab", label: "Lab" },
+      { to: "/involved", label: "Partners" },
       { to: "/investors", label: "Investors" },
       { to: "/contact", label: "Contact" },
     ],
@@ -82,26 +82,10 @@ export function BrandShell({
                 {l.label}
               </Link>
             ))}
-            {nav.cta ? (
-              <Link
-                to={nav.cta.to as "/"}
-                className="ml-2 inline-flex h-10 items-center rounded-pill bg-accent px-4 text-sm font-medium text-accent-fg"
-              >
-                {nav.cta.label}
-              </Link>
-            ) : null}
           </nav>
-          {nav.cta ? (
-            <Link
-              to={nav.cta.to as "/"}
-              className="ml-auto inline-flex h-10 items-center rounded-pill bg-accent px-4 text-sm font-medium text-accent-fg md:hidden"
-            >
-              {nav.cta.label}
-            </Link>
-          ) : null}
           <button
             type="button"
-            className={`inline-flex h-11 w-11 items-center justify-center rounded-sm text-fg md:hidden ${nav.cta ? "" : "ml-auto"}`}
+            className="ml-auto inline-flex h-11 w-11 items-center justify-center rounded-sm text-fg md:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
           >
@@ -120,15 +104,6 @@ export function BrandShell({
                 {l.label}
               </Link>
             ))}
-            {nav.cta ? (
-              <Link
-                to={nav.cta.to as "/"}
-                className="mt-1 inline-flex h-11 items-center text-sm"
-                onClick={() => setOpen(false)}
-              >
-                {nav.cta.label}
-              </Link>
-            ) : null}
           </nav>
         ) : null}
         {brand === "bullpen" ? <DeskSearch /> : null}
@@ -136,8 +111,8 @@ export function BrandShell({
       {children}
       <footer className="border-t border-line">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-10 text-sm text-faint sm:flex-row sm:items-center sm:justify-between">
-          <p>{nav.name}</p>
-          <p>Each house has its own Vercel · bullpencession.com · neemseed.net · calabigroup.com</p>
+          <p>NeemSeed</p>
+          <p>An Aorila company · Botany research & seed vault</p>
         </div>
       </footer>
     </div>
