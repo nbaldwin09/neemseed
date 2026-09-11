@@ -35,10 +35,7 @@ const NAV: Record<
     home: "/",
     name: "NeemSeed",
     links: [
-      { to: "/about", label: "About" },
       { to: "/research", label: "Research" },
-      { to: "/involved", label: "Get Involved" },
-      { to: "/investors", label: "Investors" },
       { to: "/contact", label: "Contact" },
     ],
   },
@@ -110,7 +107,7 @@ export function BrandShell({
       <footer className="border-t border-line">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-10 text-sm text-faint sm:flex-row sm:items-center sm:justify-between">
           <p>NeemSeed</p>
-          <p>An Aorila company · Botany research & seed vault</p>
+          <p>Botany research & seed vault</p>
         </div>
       </footer>
     </div>
@@ -141,14 +138,11 @@ function DeskSearch() {
       <input
         value={q}
         onChange={(e) => setQ(e.target.value)}
-        placeholder="Search sports, leagues, clubs"
-        aria-label="Search the index"
+        placeholder="Search"
+        aria-label="Search"
         className="h-10 min-h-10 w-full rounded-sm bg-surface px-3 text-sm text-fg shadow-[0_0_0_1px_var(--color-line)] outline-none placeholder:text-faint"
       />
-      <button
-        type="submit"
-        className="inline-flex h-10 shrink-0 items-center rounded-sm bg-fg px-4 text-sm font-medium text-bg"
-      >
+      <button type="submit" className="inline-flex h-10 shrink-0 items-center px-4 text-sm">
         Search
       </button>
     </form>
