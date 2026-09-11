@@ -26,13 +26,13 @@ function NeemHome() {
                 to="/research"
                 className="inline-flex h-11 items-center rounded-pill bg-accent px-5 text-sm font-medium text-accent-fg"
               >
-                Our Research
+                Research
               </Link>
               <Link
-                to="/pipeline"
+                to="/lab"
                 className="inline-flex h-11 items-center rounded-pill px-5 text-sm shadow-[0_0_0_1px_var(--color-line)]"
               >
-                Cultivar pipeline
+                Lab & vault
               </Link>
             </div>
           </div>
