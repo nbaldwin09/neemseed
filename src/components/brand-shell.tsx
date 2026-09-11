@@ -6,6 +6,7 @@ import { NeemMark } from "@/components/wordmarks";
 const LINKS = [
   { to: "/about", label: "About us" },
   { to: "/involved", label: "Get involved" },
+  { to: "/developers", label: "API" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -25,15 +26,20 @@ export function BrandShell({
             <NeemMark />
             <span className="sr-only">NeemSeed</span>
           </RRLink>
-          <button
-            type="button"
-            className="inline-flex h-11 w-11 items-center justify-center"
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
-          >
-            {open ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          <div className="flex items-center gap-4">
+            <RRLink to="/developers" className="text-sm" onClick={() => setOpen(false)}>
+              API
+            </RRLink>
+            <button
+              type="button"
+              className="inline-flex h-11 w-11 items-center justify-center"
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+              onClick={() => setOpen((v) => !v)}
+            >
+              {open ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
         </div>
         {open ? (
           <nav className="mx-auto flex max-w-6xl flex-col gap-1 border-t border-line px-5 py-3">
