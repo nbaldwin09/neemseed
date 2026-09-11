@@ -105,9 +105,25 @@ export function BrandShell({
       </header>
       {children}
       <footer className="border-t border-line">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-10 text-sm text-faint sm:flex-row sm:items-center sm:justify-between">
-          <p>NeemSeed</p>
-          <p>Botany research & seed vault</p>
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 sm:flex-row sm:items-start sm:justify-between">
+          <div>
+            <p className="font-display text-xl">neemseed.</p>
+            <p className="mt-2 text-sm text-muted">Botany research & seed vault</p>
+          </div>
+          <div className="flex flex-col gap-2 text-sm">
+            <Link to="/research" className="text-muted hover:text-fg">
+              Research
+            </Link>
+            <Link to="/contact" className="text-muted hover:text-fg">
+              Contact
+            </Link>
+            <a href="mailto:cs@neemseed.com" className="text-muted hover:text-fg">
+              cs@neemseed.com
+            </a>
+          </div>
+        </div>
+        <div className="mx-auto max-w-6xl border-t border-line px-5 py-6 text-sm text-faint">
+          © {new Date().getFullYear()} NeemSeed
         </div>
       </footer>
     </div>
