@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PAPERS, PEOPLE, PROGRAMS, SITES } from "@/lib/neem/content";
+import { PAPERS, PROGRAMS, SITES } from "@/lib/neem/content";
 
 export const Route = createFileRoute("/research")({ component: ResearchPage });
 
@@ -49,16 +49,16 @@ function ResearchPage() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              to="/pipeline"
+              to="/lab"
               className="inline-flex h-11 items-center rounded-pill bg-accent px-5 text-sm font-medium text-accent-fg"
             >
-              Cultivar pipeline
+              Lab & vault
             </Link>
             <Link
-              to="/lab"
+              to="/involved"
               className="inline-flex h-11 items-center rounded-pill px-5 text-sm shadow-[0_0_0_1px_var(--color-line)]"
             >
-              Lab & vault
+              Work with the house
             </Link>
           </div>
         </div>
@@ -81,7 +81,7 @@ function ResearchPage() {
       <section className="border-y border-line">
         <div className="mx-auto max-w-6xl px-5 py-16">
           <p className="text-xs uppercase tracking-widest text-muted">Programs</p>
-          <h2 className="mt-2 max-w-2xl font-display text-3xl">What the house actually studies</h2>
+          <h2 className="mt-2 max-w-2xl font-display text-3xl">What the house studies</h2>
           <div className="mt-10 grid gap-x-10 gap-y-12 sm:grid-cols-2">
             {PROGRAMS.map((p) => (
               <article key={p.id} className="border-t border-line pt-6">
@@ -95,42 +95,25 @@ function ResearchPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-16">
-        <div className="grid gap-14 lg:grid-cols-[1.1fr_0.9fr]">
-          <div>
-            <p className="text-xs uppercase tracking-widest text-muted">Sites</p>
-            <h2 className="mt-2 font-display text-3xl">Where the work sits</h2>
-            <ul className="mt-8 divide-y divide-line border-y border-line">
-              {SITES.map((s) => (
-                <li key={s.name} className="py-5">
-                  <p className="text-xs uppercase tracking-widest text-muted">{s.place}</p>
-                  <h3 className="mt-1 font-display text-2xl">{s.name}</h3>
-                  <p className="text-sm text-muted">{s.role}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <p className="text-xs uppercase tracking-widest text-muted">Desk</p>
-            <h2 className="mt-2 font-display text-3xl">Who holds the programs</h2>
-            <ul className="mt-8 divide-y divide-line border-y border-line">
-              {PEOPLE.map((p) => (
-                <li key={p.name} className="py-5">
-                  <h3 className="font-display text-xl">{p.name}</h3>
-                  <p className="text-xs uppercase tracking-widest text-muted">{p.role}</p>
-                  <p className="mt-2 text-sm text-muted">{p.note}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <p className="text-xs uppercase tracking-widest text-muted">Sites</p>
+        <h2 className="mt-2 font-display text-3xl">Where the work sits</h2>
+        <ul className="mt-8 grid gap-0 sm:grid-cols-2">
+          {SITES.map((s) => (
+            <li key={s.name} className="border-t border-line py-6 sm:px-6 sm:first:pl-0 sm:odd:pl-0">
+              <p className="text-xs uppercase tracking-widest text-muted">{s.place}</p>
+              <h3 className="mt-1 font-display text-2xl">{s.name}</h3>
+              <p className="text-sm text-muted">{s.role}</p>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="border-t border-line">
         <div className="mx-auto max-w-6xl px-5 py-16">
           <p className="text-xs uppercase tracking-widest text-muted">Notes</p>
-          <h2 className="mt-2 font-display text-3xl">What we have written down</h2>
+          <h2 className="mt-2 font-display text-3xl">Working papers</h2>
           <p className="mt-3 max-w-xl text-sm text-muted">
-            Internal notes and working papers. Not a journal wall. The record of what the screens actually showed.
+            Internal notes. The record of what the screens showed — not a journal wall.
           </p>
           <ul className="mt-8 divide-y divide-line border-y border-line">
             {PAPERS.map((p) => (
