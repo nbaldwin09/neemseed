@@ -1,29 +1,32 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SimplePage } from "@/components/simple-page";
+import { PAPERS, PROGRAMS } from "@/lib/neem/content";
 
 export const Route = createFileRoute("/research")({ component: ResearchPage });
-
-const PROGRAMS = [
-  { title: "Seed architecture", copy: "How the seed is built — coat, moisture, germination." },
-  { title: "Climate cultivars", copy: "Lines that hold yield under heat, salt, and drought." },
-  { title: "Rhizosphere systems", copy: "The soil partnership around the plant." },
-  { title: "Flavor chemistry", copy: "Taste as part of the screen, not an afterthought." },
-  { title: "Postharvest life", copy: "What happens after harvest, in the crate and on the table." },
-  { title: "Food culture", copy: "Whether a crop can enter a kitchen in more than one place." },
-];
 
 function ResearchPage() {
   return (
     <SimplePage
       kicker="Research"
-      title="What we study."
-      lead="Six programs. Seed first."
+      title="The seed science behind self-sufficient farming."
+      lead="Six programs. One house. Notes, accessions, and a pipeline that still has dirt on it."
     >
-      <ul className="max-w-2xl divide-y divide-line border-y border-line">
+      <div className="grid gap-10 sm:grid-cols-2">
         {PROGRAMS.map((p) => (
-          <li key={p.title} className="py-6">
-            <p className="font-display text-2xl">{p.title}</p>
-            <p className="mt-2 text-sm text-muted">{p.copy}</p>
+          <article key={p.id}>
+            <h2 className="font-display text-3xl">{p.title}</h2>
+            <p className="mt-3 text-muted">{p.copy}</p>
+          </article>
+        ))}
+      </div>
+      <h2 className="mt-20 font-display text-3xl">Notes</h2>
+      <ul className="mt-6 divide-y divide-line border-y border-line">
+        {PAPERS.map((p) => (
+          <li key={p.title} className="flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:justify-between">
+            <span>{p.title}</span>
+            <span className="text-sm text-muted">
+              {p.year} · {p.venue}
+            </span>
           </li>
         ))}
       </ul>
