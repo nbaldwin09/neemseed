@@ -1,10 +1,19 @@
-export function SeedMark({ className }: { className?: string }) {
+import type { CSSProperties } from "react";
+
+export function SeedMark({
+  className,
+  style,
+}: {
+  className?: string;
+  style?: CSSProperties;
+}) {
   return (
     <svg
       viewBox="0 0 280 320"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
+      style={style}
       aria-hidden
     >
       <line x1="140" y1="92" x2="140" y2="292" stroke="currentColor" strokeWidth="1.4" />
