@@ -16,10 +16,10 @@ function NeemHome() {
             </p>
             <div className="neem-actions">
               <Link
-                to="/research"
+                to="/about"
                 className="inline-flex h-12 items-center justify-center bg-accent px-5 text-sm font-medium uppercase tracking-wide text-accent-fg"
               >
-                Explore our research
+                About us
               </Link>
               <a
                 href="https://aorila.com"
