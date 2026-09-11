@@ -10,8 +10,15 @@ function ResearchPage() {
         <>
           Research{" "}
           <span className="text-xl font-normal sm:text-2xl">
-            powered{" "}
-            <span className="underline underline-offset-4">by Aorila</span>
+            powered by{" "}
+            <a
+              href="https://aorila.com"
+              className="underline underline-offset-4"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Aorila
+            </a>
           </span>
         </>
       }
