@@ -18,18 +18,11 @@ export function BrandShell({
   return (
     <div data-brand="neem" className="min-h-dvh bg-bg text-fg">
       <header className="border-b border-line bg-bg">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-4">
+        <div className="mx-auto flex max-w-6xl items-center px-5 py-4">
           <RRLink to="/">
             <NeemMark />
             <span className="sr-only">NeemSeed</span>
           </RRLink>
-          <nav className="flex flex-wrap items-center justify-end gap-x-5 gap-y-2 text-sm">
-            {LINKS.map((l) => (
-              <RRLink key={l.to} to={l.to} className="text-muted hover:text-fg">
-                {l.label}
-              </RRLink>
-            ))}
-          </nav>
         </div>
       </header>
 
