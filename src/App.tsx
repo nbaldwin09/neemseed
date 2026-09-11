@@ -7,11 +7,13 @@ import { Route as R9 } from "./routes/route";
 
 export default function App() {
   const Layout = R9.component;
+  const Careers = R7.component;
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route path="contact" element={<R1.component />} />
-        <Route path="careers" element={<R7.component />} />
+        <Route path="careers" element={<Careers />} />
+        <Route path="careers/:roleId" element={<Careers />} />
         <Route index element={<R3.component />} />
         <Route path="research" element={<R8.component />} />
       </Route>
