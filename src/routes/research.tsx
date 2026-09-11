@@ -5,7 +5,17 @@ export const Route = createFileRoute("/research")({ component: ResearchPage });
 
 function ResearchPage() {
   return (
-    <SimplePage title="Research">
+    <SimplePage
+      title={
+        <>
+          Research{" "}
+          <span className="text-xl font-normal sm:text-2xl">
+            powered{" "}
+            <span className="underline underline-offset-4">by Aorila</span>
+          </span>
+        </>
+      }
+    >
       <section className="max-w-2xl">
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted">Our purpose</p>
         <h2 className="mt-3 font-display text-3xl leading-snug sm:text-4xl">
