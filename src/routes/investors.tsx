@@ -7,31 +7,34 @@ function InvestorsPage() {
   return (
     <SimplePage
       kicker="Investors"
-      title="Seed science as infrastructure."
-      lead="NeemSeed builds cultivars and a vault for communities without stable growing conditions. The product is a farm that feeds itself."
+      title="Germplasm as infrastructure."
+      lead="NeemSeed builds the seed science and the vault behind commercial farms that cannot wait for a temperate season. The product is a farm that feeds the place it stands in."
     >
       <div className="grid gap-10 sm:grid-cols-3">
         <article>
           <h2 className="font-display text-2xl">Vault</h2>
-          <p className="mt-2 text-sm text-muted">
-            Live, frozen, and wild copies. Geography split. A 3-2-1 for germplasm.
+          <p className="mt-2 text-sm leading-relaxed text-muted">
+            Live, house, and cold copies. Split on purpose. A line that exists in one room is not held.
           </p>
         </article>
         <article>
-          <h2 className="font-display text-2xl">Pipeline</h2>
-          <p className="mt-2 text-sm text-muted">
-            Named lines with honest stages — lab, glasshouse, field, or grower pilot.
+          <h2 className="font-display text-2xl">Method</h2>
+          <p className="mt-2 text-sm leading-relaxed text-muted">
+            Intake, bench, screen, plate, vault. Stress floors before any yield story. Release only when a farm can stand on the line.
           </p>
         </article>
         <article>
-          <h2 className="font-display text-2xl">Kitchen</h2>
-          <p className="mt-2 text-sm text-muted">
-            A cultivar that cannot sit on a plate does not ship. Flavor is a spec.
+          <h2 className="font-display text-2xl">Farm</h2>
+          <p className="mt-2 text-sm leading-relaxed text-muted">
+            Collection without a stand is a museum. We are building toward commercial plantings on ground the market treats as unworkable.
           </p>
         </article>
       </div>
-      <Link to="/contact" className="mt-12 inline-flex h-11 items-center text-sm">
-        Contact the house →
+      <Link
+        to="/contact"
+        className="mt-12 inline-flex h-11 items-center rounded-pill bg-accent px-5 text-sm font-medium text-accent-fg"
+      >
+        Write the house
       </Link>
     </SimplePage>
   );
