@@ -65,33 +65,45 @@ export function BrandShell({
       >
         <button
           type="button"
-          className={`absolute inset-0 bg-fg/20 transition-opacity duration-300 ${open ? "opacity-100" : "opacity-0"}`}
+          className={`absolute inset-0 bg-fg/25 transition-opacity duration-300 ${
+            open ? "opacity-100" : "opacity-0"
+          }`}
           aria-label="Close menu"
           onClick={() => setOpen(false)}
         />
         <aside
-          className={`absolute inset-y-0 right-0 flex w-[min(22rem,100%)] flex-col border-l border-line bg-bg px-8 py-8 shadow-xl transition-transform duration-500 ease-out ${open ? "translate-x-0" : "translate-x-full"}`}
+          className={`absolute inset-y-0 right-0 flex w-[min(22rem,100%)] items-stretch p-4 transition-transform duration-500 ease-out ${
+            open ? "translate-x-0" : "translate-x-full"
+          }`}
         >
-          <div className="flex items-center justify-between">
-            <p className="font-display text-xl">neemseed.</p>
-            <button type="button" aria-label="Close menu" onClick={() => setOpen(false)}>
-              <X size={22} />
-            </button>
+          <div
+            className="flex h-full w-full flex-col border border-line px-7 py-7"
+            style={{ backgroundColor: "#E8E3D6" }}
+          >
+            <div className="flex items-center justify-between">
+              <p className="font-display text-xl">neemseed.</p>
+              <button type="button" aria-label="Close menu" onClick={() => setOpen(false)}>
+                <X size={22} />
+              </button>
+            </div>
+            <nav className="mt-12 flex flex-1 flex-col gap-3">
+              {LINKS.map((l, i) => (
+                <RRLink
+                  key={l.to}
+                  to={l.to}
+                  onClick={() => setOpen(false)}
+                  className={`font-display text-3xl leading-tight transition-all duration-300 ${
+                    i < shown ? "translate-x-0 opacity-100" : "translate-x-8 opacity-0"
+                  }`}
+                >
+                  {l.label}
+                </RRLink>
+              ))}
+            </nav>
+            <a href="mailto:cs@neemseed.com" className="text-sm text-muted">
+              cs@neemseed.com
+            </a>
           </div>
-          <nav className="mt-12 flex flex-col gap-2">
-            {LINKS.map((l, i) => (
-              <RRLink
-                key={l.to}
-                to={l.to}
-                onClick={() => setOpen(false)}
-                className={`font-display text-3xl transition-all duration-300 ${
-                  i < shown ? "translate-x-0 opacity-100" : "translate-x-8 opacity-0"
-                }`}
-              >
-                {l.label}
-              </RRLink>
-            ))}
-          </nav>
         </aside>
       </div>
 
