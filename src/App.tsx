@@ -3,7 +3,6 @@ import { Route as About } from "./routes/about";
 import { Route as Contact } from "./routes/contact";
 import { Route as Home } from "./routes/index";
 import { Route as Involved } from "./routes/involved";
-import { Route as Research } from "./routes/research";
 import { Route as Layout } from "./routes/route";
 
 export default function App() {
@@ -13,7 +12,6 @@ export default function App() {
       <Route path="/" element={<Shell />}>
         <Route index element={<Home.component />} />
         <Route path="about" element={<About.component />} />
-        <Route path="research" element={<Research.component />} />
         <Route path="involved" element={<Involved.component />} />
         <Route path="contact" element={<Contact.component />} />
       </Route>
