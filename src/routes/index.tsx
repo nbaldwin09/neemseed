@@ -13,9 +13,7 @@ function NeemHome() {
           </div>
           <div>
             <h1 className="font-display text-5xl leading-[1.02] tracking-tight sm:text-6xl">
-              Seed science
-              <br />
-              for hard climates.
+              Let’s make food accessible everywhere
             </h1>
             <p className="mt-6 max-w-md text-muted">
               NeemSeed collects, tests, and preserves seed varieties from around the world — building
