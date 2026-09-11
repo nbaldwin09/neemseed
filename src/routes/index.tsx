@@ -19,12 +19,22 @@ function NeemHome() {
               NeemSeed collects, tests, and preserves seed varieties from around the world — building
               toward commercial, self-sufficient farms for communities without stable growing conditions.
             </p>
-            <Link
-              to="/research"
-              className="mt-8 inline-flex h-12 items-center bg-accent px-6 text-sm font-medium uppercase tracking-wide text-accent-fg"
-            >
-              Explore our research
-            </Link>
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <Link
+                to="/research"
+                className="inline-flex h-12 items-center bg-accent px-6 text-sm font-medium uppercase tracking-wide text-accent-fg"
+              >
+                Explore our research
+              </Link>
+              <a
+                href="https://aorila.com"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-12 items-center px-6 text-sm font-medium uppercase tracking-wide shadow-[0_0_0_1px_var(--color-line)]"
+              >
+                Powered by <span className="ml-1 underline underline-offset-4">Aorila</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
